@@ -1,0 +1,96 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Section Headers ===== */
+.insert {
+  background-color: #003366;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  text-align: right;
+}
+
+.media {
+  color: red;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 20px 20px 10px 20px;
+}
+
+.format-text {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+  display: inline-block;
+  border: 2px solid white;
+  margin: 15px 20px 10px 20px;
+}
+
+.controls {
+  color: lime;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 20px 20px 10px 20px;
+}
+
+.galleries {
+  background-color: #003366;
+  color: yellow;
+  font-weight: bold;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+/* ===== Paragraphs ===== */
+p {
+  margin: 10px 20px;
+  line-height: 1.6;
+}
+
+/* ===== Lists ===== */
+ul {
+  margin: 10px 40px;
+}
+li {
+  margin-bottom: 5px;
+}
+
+li:nth-child(1) { color: red; }
+li:nth-child(2) { color: violet; }
+li:nth-child(3) { color: deeppink; }
+
+/* ===== Links ===== */
+a {
+  color: deepskyblue;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.green-link {
+  color: lime;
+}
+
+/* ===== Highlights ===== */
+.highlight {
+  color: red;
+  font-weight: bold;
+}
+
+.highlight-green {
+  color: lime;
+  font-weight: bold;
+}
+
+.red-box {
+  background-color: red;
+  color: white;
+  padding: 10px;
+  margin: 0;
+}
