@@ -1,0 +1,52 @@
+body{
+    margin:0;
+}
+h3, h2{
+    margin: 10px;
+}
+
+.header{
+    display: flex;
+    background: #000000;
+    height: 50px;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+}
+.right-header{
+    display: flex;
+    margin-left: auto;
+    margin-top: 4px;
+}
+
+.btn{
+    margin: 10px;
+    background-color: #198753;   
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
+img{
+    width: 67%;
+}
+
+.card-form{
+    display: flex;
+    background-color: #e6e0e0;
+}
+ 
+form {
+    width: 400px; 
+    margin: 0 auto; 
+    border: 1px solid #ccc; 
+    padding: 20px;
+    }
+
+.size  {
+    width: 50px;
+}
+
+input{
+    border: none;
+    height: 20px;
+}
