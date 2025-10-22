@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bookly</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<style>
+:root {
+--primary-color: #ff6b7a;
+--secondary-color: #4a5568;
+--light-gray: #718096;
+}
+
+body {
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+color: #2d3748;
+}
+
+/* Navbar */
+.navbar {
+background: white;
+box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+padding: 1rem 0;
+}
+
+.logo {
+font-size: 1.75rem;
+font-weight: 700;
+color: #2d3748;
+text-decoration: none;
+}
+
+.logo span {
+color: var(--primary-color);
+}
+
+.navbar-nav .nav-link {
+color: var(--light-gray);
+font-weight: 500;
+margin: 0 0.75rem;
+text-transform: uppercase;
+font-size: 0.875rem;
+letter-spacing: 0.5px;
+transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero-section {
+background: linear-gradient(135deg, #d1ecf1 0%, #f8d7da 50%, #f5c6cb 100%);
+padding: 80px 0 100px;
+position: relative;
+}
+
+.hero-content {
+padding-top: 40px;
+}
+
+.hero-title {
+font-size: 3.5rem;
+font-weight: 700;
+color: #1a202c;
+line-height: 1.15;
+margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+color: var(--light-gray);
+font-size: 1rem;
+margin-bottom: 2rem;
+}
+
+.btn-coral {
+background-color: var(--primary-color);
+border: none;
+padding: 14px 40px;
+border-radius: 50px;
+font-weight: 600;
+color: white;
+font-size: 0.95rem;
+transition: all 0.3s;
+box-shadow: 0 4px 15px rgba(255, 107, 122, 0.3);
+}
+
+.btn-coral:hover {
+background-color: #ff5566;
+transform: translateY(-2px);
+box-shadow: 0 6px 20px rgba(255, 107, 122, 0.4);
+color: white;
+}
+
+.hero-book {
+position: relative;
+text-align: center;
+}
+
+.hero-book img {
+max-width: 320px;
+width: 100%;
+box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+border-radius: 8px;
+transform: perspective(1000px) rotateY(-5deg);
+}
+
+/* Features Section */
+.features-section {
+padding: 70px 0;
+background: white;
+}
+
+.feature-item {
+text-align: center;
+padding: 0 15px;
+}
+
+.feature-item h5 {
+font-weight: 700;
+font-size: 1.1rem;
+margin: 20px 0 12px;
+color: #2d3748;
+}
+
+.feature-item p {
+color: var(--light-gray);
+font-size: 0.9rem;
+line-height: 1.6;
+}
+
+/* Best Selling Section */
+.best-selling-section {
+padding: 60px 0;
+background: #f7fafc;
+}
+
+.section-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 40px;
+}
+
+.section-title {
+font-size: 2.25rem;
+font-weight: 700;
+color: #1a202c;
+margin: 0;
+}
+
+.product-card {
+background: white;
+border-radius: 12px;
+overflow: hidden;
+transition: all 0.3s;
+height: 100%;
+box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.product-card:hover {
+transform: translateY(-8px);
+box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+
+.product-image {
+width: 100%;
+height: 380px;
+object-fit: cover;
+display: block;
+}
+
+.product-info {
+padding: 20px;
+}
+
+.product-title {
+font-weight: 700;
+font-size: 1.05rem;
+color: #2d3748;
+margin-bottom: 6px;
+}
+
+.product-author {
+color: var(--light-gray);
+font-size: 0.9rem;
+margin-bottom: 10px;
+}
+
+.product-price {
+color: var(--primary-color);
+font-weight: 700;
+font-size: 1.25rem;
+}
+
+/* Discount Section */
+.discount-section {
+background: linear-gradient(135deg, #fce7f3 0%, #dbeafe 100%);
+padding: 100px 0;
+}
+
+.discount-content {
+display: flex;
+align-items: center;
+}
+
+.discount-image {
+text-align: center;
+}
+
+.discount-image img {
+max-width: 400px;
+width: 100%;
+}
+
+.discount-text h2 {
+font-size: 3rem;
+font-weight: 700;
+line-height: 1.2;
+color: #1a202c;
+margin-bottom: 30px;
+}
+
+/* Featured & Latest Section */
+.featured-section {
+padding: 70px 0;
+background: white;
+}
+
+.list-card {
+background: white;
+border: 1px solid #e2e8f0;
+border-radius: 12px;
+padding: 35px;
+height: 100%;
+}
+
+.list-card h3 {
+font-size: 1.75rem;
+font-weight: 700;
+margin-bottom: 30px;
+color: #1a202c;
+}
+
+.list-item {
+display: flex;
+align-items: flex-start;
+gap: 18px;
+padding: 20px 0;
+border-bottom: 1px solid #f7fafc;
+}
+
+.list-item:last-child {
+border-bottom: none;
+}
+
+.list-item img {
+width: 70px;
+height: 100px;
+object-fit: cover;
+border-radius: 6px;
+box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.list-item-info h6 {
+font-weight: 700;
+font-size: 1rem;
+margin-bottom: 5px;
+color: #2d3748;
+}
+
+.list-item-info .author {
+color: var(--light-gray);
+font-size: 0.875rem;
+margin-bottom: 8px;
+}
+
+.list-item-info .price {
+color: var(--primary-color);
+font-weight: 700;
+font-size: 1.15rem;
+}
+
+/* Categories Section */
+.categories-section {
+padding: 70px 0;
+background: #f7fafc;
+}
+
+.category-card {
+position: relative;
+border-radius: 12px;
+overflow: hidden;
+height: 250px;
+cursor: pointer;
+transition: transform 0.3s;
+}
+
+.category-card:hover {
+transform: scale(1.03);
+}
+
+.category-card img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.category-badge {
+position: absolute;
+bottom: 25px;
+left: 25px;
+background: var(--primary-color);
+color: white;
+padding: 10px 28px;
+border-radius: 50px;
+font-weight: 600;
+font-size: 1rem;
+box-shadow: 0 4px 12px rgba(255, 107, 122, 0.4);
+}
+
+/* Footer */
+footer {
+background: #f7fafc;
+padding: 70px 0 40px;
+}
+
+footer .logo {
+font-size: 2rem;
+margin-bottom: 20px;
+display: block;
+}
+
+footer h5 {
+font-weight: 700;
+font-size: 1.15rem;
+margin-bottom: 25px;
+color: #1a202c;
+}
+
+footer p, footer ul li {
+color: var(--light-gray);
+font-size: 0.95rem;
+line-height: 1.8;
+}
+
+footer ul {
+list-style: none;
+padding: 0;
+}
+
+footer ul li {
+margin-bottom: 12px;
+}
+
+footer ul li a {
+color: var(--light-gray);
+text-decoration: none;
+transition: color 0.3s;
+}
+
+footer ul li a:hover {
+color: var(--primary-color);
+}
+
+footer a {
+color: var(--primary-color);
+text-decoration: none;
+}
+
+footer a:hover {
+text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+.hero-title {
+font-size: 2.5rem;
+}
+
+.discount-text h2 {
+font-size: 2.25rem;
+}
+
+.section-title {
+font-size: 1.75rem;
+}
+}
+</style>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg sticky-top">
+<div class="container">
+<a class="logo" href="#"><span>B</span>ookly</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+<ul class="navbar-nav">
+<li class="nav-item">
+<a class="nav-link active" href="#home">Home</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#about">About</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#shop">Shop</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#blogs">Blogs</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#pages">Pages</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#contact">Contact</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-section" id="home">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-lg-6 hero-content">
+<h1 class="hero-title">The Fine Print<br>Book Collection</h1>
+<p class="hero-subtitle">Best Offer Save 30% Grab it now!</p>
+<button class="btn btn-coral">Shop Collection</button>
+</div>
+<div class="col-lg-6 hero-book">
+<img src="image/img1.jpg" alt="The Fine Print by Lauren Asher">
+</div>
+</div>
+</div>
+</section>
+
+<!-- Features Section -->
+<section class="features-section">
+<div class="container">
+<div class="row">
+<div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+<div class="feature-item">
+<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ff6b7a" stroke-width="2">
+<rect x="1" y="3" width="15" height="13"></rect>
+<polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+<circle cx="5.5" cy="18.5" r="2.5"></circle>
+<circle cx="18.5" cy="18.5" r="2.5"></circle>
+</svg>
+<h5>Free Delivery</h5>
+<p>Consectetur adipis elit lorem ipsum dolor sit amet.</p>
+</div>
+</div>
+<div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+<div class="feature-item">
+<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ff6b7a" stroke-width="2">
+<circle cx="12" cy="8" r="7"></circle>
+<polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+</svg>
+<h5>Quality Guarantee</h5>
+<p>Dolor sit amet eros nunc mcons ectetur adipis elit.</p>
+</div>
+</div>
+<div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+<div class="feature-item">
+<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ff6b7a" stroke-width="2">
+<path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+<line x1="7" y1="7" x2="7.01" y2="7"></line>
+</svg>
+<h5>Daily Offers</h5>
+<p>Amet consectetur utpis elt lorem reme dolor sit.</p>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="feature-item">
+<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ff6b7a" stroke-width="2">
+<rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+<path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+</svg>
+<h5>100% Secure Payment</h5>
+<p>Rem Lopsum dolor sit amet consectetur adipis elt.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Best Selling Items -->
+<section class="best-selling-section" id="shop">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">Best Selling Items</h2>
+<button class="btn btn-coral">View All</button>
+</div>
+<div class="row g-4">
+<div class="col-lg-3 col-md-6">
+<div class="product-card">
+<img src="image/img2.jpg" alt="House Of Sky Breath" class="product-image">
+<div class="product-info">
+<h6 class="product-title">House Of Sky Breath</h6>
+<p class="product-author">Lauren Asher</p>
+<p class="product-price">$870</p>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="product-card">
+<img src="image/img3.jpg" alt="Heartland Stars" class="product-image">
+<div class="product-info">
+<h6 class="product-title">Heartland Stars</h6>
+<p class="product-author">Lauren Asher</p>
+<p class="product-price">$870</p>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="product-card">
+<img src="image/img4.jpg" alt="Heavenly Bodies" class="product-image">
+<div class="product-info">
+<h6 class="product-title">Heavenly Bodies</h6>
+<p class="product-author">Lauren Asher</p>
+<p class="product-price">$870</p>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="product-card">
+<img src="image/img5.jpg" alt="His Saving Grace" class="product-image">
+<div class="product-info">
+<h6 class="product-title">His Saving Grace</h6>
+<p class="product-author">Lauren Asher</p>
+<p class="product-price">$870</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Discount Section -->
+<section class="discount-section">
+<div class="container">
+<div class="row align-items-center discount-content">
+<div class="col-lg-6 discount-image">
+<img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=500&h=500&fit=crop" alt="Book Stack">
+</div>
+<div class="col-lg-6 discount-text">
+<h2>30% Discount<br>On All Items.<br>Hurry Up !!!</h2>
+<button class="btn btn-coral">Shop Collection</button>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Featured & Latest Items -->
+<section class="featured-section">
+<div class="container">
+<div class="row g-4">
+<div class="col-lg-6">
+<div class="list-card">
+<h3>Featured</h3>
+<div class="list-item">
+<img src="image/img7.jpg" alt="Echoes Of The Ancients">
+<div class="list-item-info">
+<h6>Echoes Of The Ancients</h6>
+<p class="author">Lauren Asher</p>
+<p class="price">$870</p>
+</div>
+</div>
+<div class="list-item">
+<img src="image/img8.webp" alt="The Midnight Garden">
+<div class="list-item-info">
+<h6>The Midnight Garden</h6>
+<p class="author">Lauren Asher</p>
+<p class="price">$870</p>
+</div>
+</div>
+<div class="list-item">
+<img src="image/img9.jpg" alt="Shadow Of The Serpent">
+<div class="list-item-info">
+<h6>Shadow Of The Serpent</h6>
+<p class="author">Lauren Asher</p>
+<p class="price">$870</p>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="list-card">
+<h3>Latest Items</h3>
+<div class="list-item">
+<img src="image/img10.jpg" alt="Whispering Winds">
+<div class="list-item-info">
+<h6>Whispering Winds</h6>
+<p class="author">Lauren Asher</p>
+<p class="price">$870</p>
+</div>
+</div>
+<div class="list-item">
+<img src="image/img11.jpg" alt="The Forgotten Realm">
+<div class="list-item-info">
+<h6>The Forgotten Realm</h6>
+<p class="author">Lauren Asher</p>
+<p class="price">$870</p>
+</div>
+</div>
+<div class="list-item">
+<img src="image/img12.jpg" alt="Moonlit Secrets">
+<div class="list-item-info">
+<h6>Moonlit Secrets</h6>
+<p class="author">Lauren Asher</p>
+<p class="price">$870</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Categories -->
+<section class="categories-section">
+<div class="container">
+<h2 class="section-title">Categories</h2>
+<div class="row g-4">
+<div class="col-lg-4 col-md-6">
+<div class="category-card">
+<img src="https://images.unsplash.com/photo-1474552226712-ac0f0961a954?w=600&h=400&fit=crop" alt="Romance">
+<span class="category-badge">Romance</span>
+</div>
+</div>
+<div class="col-lg-4 col-md-6">
+<div class="category-card">
+<img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600&h=400&fit=crop" alt="Lifestyle">
+<span class="category-badge">Lifestyle</span>
+</div>
+</div>
+<div class="col-lg-4 col-md-6">
+<div class="category-card">
+<img src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=600&h=400&fit=crop" alt="Recipe">
+<span class="category-badge">Recipe</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer id="contact">
+<div class="container">
+<div class="row">
+<div class="col-lg-3 col-md-6 mb-4">
+<a href="#" class="logo"><span>B</span>ookly</a>
+<p>Nisi, purus vitae, ultrices nunc. Sit ac sit suscipit hendrerit. Gravida massa volutpat aenean odio erat nullam fringilla.</p>
+</div>
+<div class="col-lg-3 col-md-6 mb-4">
+<h5>Quick Links</h5>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#shop">Shop</a></li>
+<li><a href="#blogs">Blogs</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</div>
+<div class="col-lg-3 col-md-6 mb-4">
+<h5>Help & Info Help</h5>
+<ul>
+<li><a href="#">Track Your Order</a></li>
+<li><a href="#">Returns Policies</a></li>
+<li><a href="#">Shipping + Delivery</a></li>
+<li><a href="#">Contact Us</a></li>
+<li><a href="#">Faqs</a></li>
+</ul>
+</div>
+<div class="col-lg-3 col-md-6 mb-4">
+<h5>Contact Us</h5>
+<p>Do you have any queries or suggestions?<br>
+<a href="mailto:yourinfo@gmail.com">sirpasarakomaluoyka@pinakagwaponasir.com</a></p>
+<p>If you need support? Just give us a call.<br>
+<a href="tel:+551112223344">+55 111 222 333 44</a></p>
+</div>
+</div>
+</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
