@@ -1,28 +1,14 @@
 <html>
 
 <head>
-    <title>MyKirby</title>
+    <title>MyDay | Log in</title>
 </head>
 
 <style>
-    * {
-        box-sizing: border-box;
-        font-family: Helvetica, Arial, sans-serif;
-    }
-
-    body {
-        margin: 0;
-        background-color: #e9ebee;
-    }
-
     #bar {
         height: 100px;
         background-color: rgb(59,89,152);
         color: #d9dfeb;
-        padding: 20px 25px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
     }
 
     #signup_button {
@@ -31,103 +17,63 @@
         text-align: center;
         padding: 4px;
         border-radius: 4px;
-        float:right;
-        color: #fff;
-        cursor: pointer;
-        font-weight: bold;
-        font-size: 14px;
+        float: right;
     }
 
-    #login_container {
-        display: flex;
-        justify-content: center;
-        padding: 40px 20px;
-    }
+    #bar2{
 
-    #login_card {
-        background-color: #fff;
-        border: 1px solid #dddfe2;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.15);
-        width: 100%;
-        max-width: 500px;
-        padding: 40px;
+        background-color: white;
+        width: 800px;
+        margin: auto;
+        margin-top: 50px;
+        padding: 10px;
+        padding-top: 50px;
         text-align: center;
-    }
-
-    #login_card h1 {
-        font-size: 22px;
-        font-weight: 500;
-        color: #1c1e21;
-        margin-bottom: 20px;
-    }
-
-    #login_card input[type="text"],
-    #login_card input[type="password"] {
-        width: 100%;
-        padding: 14px 16px;
-        margin-bottom: 12px;
-        font-size: 17px;
-        border: 1px solid #ccd0d5;
-        border-radius: 6px;
-    }
-
-    #login_btn {
-        width: 100%;
-        background-color: rgb(59,89,152);
-        color: #fff;
-        border: none;
-        padding: 14px 0;
-        font-size: 20px;
         font-weight: bold;
-        border-radius: 6px;
-        cursor: pointer;
-        margin-bottom: 16px;
     }
 
-    #login_links {
+    #text{
+
+        height: 40px;
+        width: 300px;
+        border-radius: 4px;
+        border: solid 1px #ccc;
+        padding: 4px;
         font-size: 14px;
+
     }
 
-    #login_links a {
-        color: #385898;
-        text-decoration: none;
-    }
+    #button{
 
-    #login_links a:hover {
-        text-decoration: underline;
-    }
+        width: 300px;
+        height: 40px;
+        border-radius: 4px;
+        border: none;
+        background-color: rgb(59,89,152);
+        color: white;
 
-    .divider {
-        color: #ccc;
-        margin: 0 6px;
     }
 </style>
 
-<body>
+<body style="font-family: tahoma; background-color: #e9ebee;">
 
     <div id="bar">
 
-        <div style="font-size: 40px;">MyKirby</div>
+        <div style="font-size: 40px;">MyDay</div>
 
-        <div id="signup_button">Signup</div>
+        <div id="signup_button">Sign up</div>
 
     </div>
 
-    <div id="login_container">
-        <div id="login_card">
-            <h1>Log in BAI</h1>
-            <form onsubmit="return false;">
-                <input type="text" placeholder="Email address or phone number">
-                <input type="password" placeholder="Password">
-                <button type="submit" id="login_btn">Log In</button>
-            </form>
-            <div id="login_links">
-                <a href="#">Forgotten account?</a>
-                <span class="divider">·</span>
-                <a href="#">Sign up for Mybook</a>
-            </div>
-        </div>
+    <div id="bar2">
+
+        Log in to MyDay<br><br>
+
+        <input type="text" placeholder="Email" id="text"><br><br>
+        <input type="password" placeholder="Password" id="text"><br><br>
+
+        <input type="submit" id="button" value="Log in">
+        <br><br><br>
     </div>
 
 </body>
